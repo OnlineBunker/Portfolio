@@ -149,13 +149,14 @@ body {
 }
 
 .projects-cards {
+  margin-top: 7rem;
   display: flex;
   justify-content: space-between;
   gap: 3rem;
 }
 
 .project-card {
-  margin-top: 5rem;
+  margin-top: rem;
   background-color: #22272e; /* dark charcoal */
   flex: 1;
   padding: 3rem 2rem; /* bigger cards */
@@ -210,4 +211,36 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   background-color: #2b3240;
+}
+
+.short-desc {
+  max-height: 3.5em; /* enough for ~2 lines */
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  color: #d0d0d0;
+  font-size: 1.125rem;
+  opacity: 0.85;
+}
+
+.tech-used {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  font-style: italic;
+  color: #c1c1c1;
+  font-size: 0.95rem;
+  opacity: 0;
+  margin-top: 0;
+}
+
+/* On hover, expand short-desc and reveal tech-used */
+.card-link:hover .short-desc {
+  max-height: 500px; /* large enough for full text */
+  opacity: 1;
+}
+
+.card-link:hover .tech-used {
+  max-height: 50px;
+  opacity: 1;
+  margin-top: 1rem;
 }
