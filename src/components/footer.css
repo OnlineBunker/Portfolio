@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.footer {
+    background-color: #212529;
+    color: #F7F7F7;
+    padding: 1rem;
+    text-align: center;
+    padding: 15px 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-family: sans-serif;
+    z-index: 1000;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.logo-icon {
+    font-size: 1.5em;
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.social-links a {
+    margin-left: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+.git{
+    filter: invert(100%)
+}
+.mail{
+    filter: invert(100%)
+}

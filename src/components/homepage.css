@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.homepage {
+  background-image: url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUyNDAwMTN8&ixlib=rb-4.0.3&q=85");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 0 2rem;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #323643;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #606470;
+  margin-bottom: 2rem;
+}
+
+.get-start {
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: white;
+  color: #323643;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: 0.3s ease-in-out;
+}
+
+.get-start:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  background-color: #323643;
+  color: white;
+  transform: translateY(-2px);
+  font-size: 1.25rem;
+  padding: 1rem 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 4px;
+  height: 1.1em;
+  background-color: #323643;
+  margin-left: 2px;
+  animation: blink-caret 0.75s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink-caret {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #323643;
+  }
+}
+
+/* About section */
+.about-content {
+  padding-top: 7rem;
+  min-height: 50vh;
+  max-width: 800px;
+  margin: 6rem auto;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  color: #323643;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.about-content h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #DC3545; 
+  margin: 0.5rem auto 1rem auto;
+  border-radius: 2px;
+}
+
+.about-content p {
+  font-size: 1.125rem;
+  color: #606470; 
+  line-height: 1.8;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: -17rem;
+}
