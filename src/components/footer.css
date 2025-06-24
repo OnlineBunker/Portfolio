@@ -1,61 +1,86 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
 .footer {
-    background-color: #212529;
-    color: #F7F7F7;
-    padding: 1rem;
-    text-align: center;
-    padding: 15px 20px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    font-family: sans-serif;
-    z-index: 1000;
+  background-color: #212529;
+  color: #F7F7F7;
+  padding: 20px 5%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-content {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .logo-icon {
-    font-size: 1.5em;
-    margin-right: 8px;
-    color: #007bff;
+  font-size: 1.5rem;
+  margin-right: 8px;
+  color: #93DEFF;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .social-links a {
-    margin-left: 15px;
-    display: inline-block;
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .social-links a:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .social-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.git,
+.mail {
+  filter: invert(100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+
+  .social-icon {
     width: 24px;
     height: 24px;
-}
-.git{
-    filter: invert(100%)
-}
-.mail{
-    filter: invert(100%)
+  }
 }

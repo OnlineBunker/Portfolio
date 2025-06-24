@@ -1,3 +1,8 @@
+/* === BASE STYLES === */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -18,6 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .hero-content h1 {
@@ -75,7 +81,8 @@ body {
   }
 }
 
-/* About section */
+/* === ABOUT SECTION === */
+
 .about-content {
   padding-top: 4rem; 
   min-height: 50vh;
@@ -107,9 +114,7 @@ body {
   line-height: 1.8;
 }
 
-.hero-content {
-  position: relative;
-}
+/* === HERO BUTTONS === */
 
 .hero-buttons {
   display: flex;
@@ -123,10 +128,11 @@ body {
   bottom: -17rem;
 }
 
-/* Projects section */
+/* === PROJECTS SECTION === */
+
 .projects-section {
   max-width: 1000px;
-  margin: 2rem auto 6rem auto; /* reduced gap */
+  margin: 2rem auto 6rem auto;
   text-align: center;
   color: #f7f7f7;
 }
@@ -149,31 +155,32 @@ body {
 }
 
 .projects-cards {
-  margin-top: 7rem;
+  margin-top: 5rem;
   display: flex;
-  justify-content: space-between;
-  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
 .project-card {
-  margin-top: rem;
-  background-color: #22272e; /* dark charcoal */
-  flex: 1;
-  padding: 3rem 2rem; /* bigger cards */
+  background-color: #22272e;
+  flex: 1 1 300px;
+  max-width: 320px;
+  padding: 2.5rem 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  color: #f7f7f7; /* off-white text */
+  color: #f7f7f7;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .project-card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #ffffff; /* accent color */
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
@@ -190,16 +197,7 @@ body {
   background-color: #2b3240;
 }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .projects-cards {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .project-card {
-    padding: 2.5rem 1.5rem;
-  }
-}
+/* Removed hover on .card-link since it caused double triggering */
 .card-link {
   text-decoration: none;
   color: inherit;
@@ -214,7 +212,7 @@ body {
 }
 
 .short-desc {
-  max-height: 3.5em; /* enough for ~2 lines */
+  max-height: 3.5em;
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.4s ease;
   color: #d0d0d0;
@@ -233,24 +231,25 @@ body {
   margin-top: 0;
 }
 
-.card-link:hover .short-desc {
-  max-height: 500px; 
+.project-card:hover .short-desc {
+  max-height: 500px;
   opacity: 1;
 }
 
-.card-link:hover .tech-used {
+.project-card:hover .tech-used {
   max-height: 50px;
   opacity: 1;
   margin-top: 1rem;
 }
 
+/* === TIMELINE SECTION === */
+
 .timeline-section {
   min-height: 50vh;
   max-width: 800px;
-  margin: 0rem auto 3rem auto; 
+  margin: 0 auto 15rem auto;
   text-align: center;
   color: #323643;
-  margin-bottom: 15rem;
 }
 
 .timeline-section h2 {
@@ -314,76 +313,15 @@ body {
   color: #606470;
 }
 
-@media (max-width: 768px) {
-  .timeline-container {
-    padding-left: 30px;
-  }
+/* === CONTACT SECTION === */
 
-  .timeline-container::before {
-    left: 14px;
-  }
-
-  .timeline-dot {
-    left: 7px;
-  }
-
-  .timeline-content {
-    padding-left: 1.5rem;
-  }
-
-  .timeline-section h2 {
-    font-size: 2rem;
-  }
-
-  .timeline-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .timeline-content p,
-  .timeline-content .date {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .timeline-container {
-    padding-left: 25px;
-  }
-
-  .timeline-container::before {
-    left: 12px;
-    width: 3px;
-  }
-
-  .timeline-dot {
-    width: 10px;
-    height: 10px;
-    left: 6px;
-  }
-
-  .timeline-content {
-    padding-left: 1.2rem;
-  }
-
-  .timeline-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .timeline-content h3 {
-    font-size: 1rem;
-  }
-
-  .timeline-content p,
-  .timeline-content .date {
-    font-size: 0.85rem;
-  }
-}
-
-/* Contact Section */
 .contact-section {
   min-height: 50vh;
-  max-width: 800px;
-  margin: 15rem auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Add this to center vertically */
+  padding: 2rem;
   text-align: center;
   color: #323643;
 }
@@ -405,21 +343,21 @@ body {
 }
 
 .contact-form {
-  margin-top: 5rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all content */
+  align-items: center;
   gap: 1rem;
 }
 
 .contact-inputs {
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; /* Center name + email */
   width: 100%;
-  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .contact-inputs input,
@@ -431,7 +369,7 @@ body {
   font-size: 1rem;
   border-radius: 8px;
   width: 100%;
-  max-width: 380px; /* New: consistent max-width */
+  max-width: 380px;
 }
 
 .contact-inputs input {
@@ -455,20 +393,164 @@ body {
   cursor: pointer;
   transition: background 0.3s;
   width: 100%;
-  max-width: 800px; /* New: keeps button aligned with others */
+  max-width: 800px;
 }
 
 .contact-form button:hover {
   background-color: #454a5a;
 }
 
-@media (max-width: 600px) {
-  .contact-inputs {
-    flex-direction: column;
-    align-items: center; /* New: center inputs on mobile too */
+
+/* ========================================================= */
+/* === RESPONSIVE MEDIA QUERIES — grouped at the bottom === */
+/* ========================================================= */
+
+/* === ENHANCED RESPONSIVE STYLES === */
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
 
-  .contact-inputs input {
-    flex: 1 1 100%;
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .projects-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .project-card {
+    flex: 1 1 300px;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding-top: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-content h2,
+  .projects-section h2,
+  .timeline-section h2,
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p,
+  .project-card p,
+  .tech-used,
+  .short-desc,
+  .timeline-content p,
+  .timeline-content .date {
+    font-size: 1rem;
+  }
+
+  .projects-cards {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .timeline-container {
+    padding-left: 25px;
+  }
+
+  .timeline-container::before {
+    left: 12px;
+    width: 3px;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    left: 6px;
+    top: 0.35rem;
+  }
+
+  .timeline-content {
+    padding-left: 1.2rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    margin-top: 3rem;
+  }
+
+  .contact-inputs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .contact-inputs input,
+  .contact-form textarea,
+  .contact-form button {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .get-start {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .about-content h2,
+  .projects-section h2,
+  .timeline-section h2,
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .projects-section h2::after,
+  .timeline-section h2::after,
+  .about-content h2::after,
+  .contact-section h2::after {
+    width: 40px;
+    height: 3px;
+  }
+
+  .project-card {
+    padding: 2rem 1rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-content p,
+  .timeline-content .date {
+    font-size: 0.85rem;
+  }
+
+  .scroll-down {
+    display: none;
   }
 }
