@@ -77,10 +77,10 @@ body {
 
 /* About section */
 .about-content {
-  padding-top: 4rem; /* reduced from 7rem */
+  padding-top: 4rem; 
   min-height: 50vh;
   max-width: 800px;
-  margin: 4rem auto 3rem auto; /* reduced vertical spacing */
+  margin: 4rem auto 3rem auto; 
   text-align: center;
   color: #323643;
 }
@@ -233,9 +233,8 @@ body {
   margin-top: 0;
 }
 
-/* On hover, expand short-desc and reveal tech-used */
 .card-link:hover .short-desc {
-  max-height: 500px; /* large enough for full text */
+  max-height: 500px; 
   opacity: 1;
 }
 
@@ -243,4 +242,233 @@ body {
   max-height: 50px;
   opacity: 1;
   margin-top: 1rem;
+}
+
+.timeline-section {
+  min-height: 50vh;
+  max-width: 800px;
+  margin: 0rem auto 3rem auto; 
+  text-align: center;
+  color: #323643;
+  margin-bottom: 15rem;
+}
+
+.timeline-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #dc3545;
+  margin: 0.5rem auto 1rem auto;
+  border-radius: 2px;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 2rem;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  width: 4px;
+  height: 100%;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  position: absolute;
+  left: 11px;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+.timeline-content {
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.timeline-content .date {
+  font-weight: bold;
+  color: #606470;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-left: 30px;
+  }
+
+  .timeline-container::before {
+    left: 14px;
+  }
+
+  .timeline-dot {
+    left: 7px;
+  }
+
+  .timeline-content {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-section h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content p,
+  .timeline-content .date {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    padding-left: 25px;
+  }
+
+  .timeline-container::before {
+    left: 12px;
+    width: 3px;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    left: 6px;
+  }
+
+  .timeline-content {
+    padding-left: 1.2rem;
+  }
+
+  .timeline-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p,
+  .timeline-content .date {
+    font-size: 0.85rem;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  min-height: 50vh;
+  max-width: 800px;
+  margin: 15rem auto 3rem auto;
+  text-align: center;
+  color: #323643;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.contact-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #dc3545;
+  margin: 0.5rem auto 1rem auto;
+  border-radius: 2px;
+}
+
+.contact-form {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content */
+  gap: 1rem;
+}
+
+.contact-inputs {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* Center name + email */
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-inputs input,
+.contact-form textarea {
+  background-color: #1e1e1e;
+  border: none;
+  color: #f7f7f7;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 380px; /* New: consistent max-width */
+}
+
+.contact-inputs input {
+  flex: 1 1 45%;
+  min-width: 220px;
+}
+
+.contact-form textarea {
+  resize: none;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-form button {
+  background-color: #323643;
+  color: #f7f7f7;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 800px; /* New: keeps button aligned with others */
+}
+
+.contact-form button:hover {
+  background-color: #454a5a;
+}
+
+@media (max-width: 600px) {
+  .contact-inputs {
+    flex-direction: column;
+    align-items: center; /* New: center inputs on mobile too */
+  }
+
+  .contact-inputs input {
+    flex: 1 1 100%;
+  }
 }

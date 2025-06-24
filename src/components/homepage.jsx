@@ -37,7 +37,7 @@ export default function Homepage() {
     if (atAbout) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.scrollTo({ top: 500, behavior: 'smooth' }); // scroll only 500px
+      window.scrollTo({ top: 500, behavior: 'smooth' });
     }
   };
 
@@ -70,15 +70,58 @@ export default function Homepage() {
       <div id="about" className="about-content">
         <h2>About Me</h2>
         <p>
-          I’m a passionate Computer Science & AI student, focused on building
-          clean, efficient, and intelligent web experiences. I love exploring
-          new technologies, solving real-world problems, and constantly pushing
-          the boundaries of what’s possible with code.
+          I'm Yash Dhankhar, currently pursuing B.Tech in Computer Science and Artificial Intelligence at Newton School of Technology. Over time, 
+          I’ve developed a deep interest in AI and Machine Learning, 
+          which I actively explore as a member of my college’s AI Club. My academic journey has been shaped by curiosity, consistency, and a strong inclination toward technology-driven problem-solving. 
+          I’ve also taken part in leadership roles during school and college events, which helped me grow as a communicator and team player. 
+          I'm now focused on building meaningful projects and gaining practical experience in the AI and tech space.
         </p>
       </div>
 
+      <div id="timeline" className="timeline-section">
+        <h2>Timeline</h2>
+        <div className="timeline-container">
+          <div className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <span className="date">2021 – 2022</span>
+              <h3>10th Grade (CBSE)</h3>
+              <p>Rajkiya Pratibha Vikas Vidalaya</p>
+              <p>Scored 94% overall, including 100% in Mathematics. 
+                Developed a strong foundation in Math and Science. 
+                Demonstrated leadership by directing a play for the Annual Day event.</p>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <span className="date">2023 – 2024</span>
+              <h3>12th Grade (CBSE) (PCM + CS)</h3>
+              <p>Rajkiya Pratibha Vikas Vidalaya</p>
+              <p>Scored 85% overall. 
+                Discovered a strong interest in Computer Science and decided to pursue it further. 
+                Demonstrated true leadership by serving on the core committee responsible for executing the Annual Day event.</p>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <span className="date">2024 – Present</span>
+              <h3>B.Tech in Computer Science and Artificial Intelligence</h3>
+              <p>Newton School of Technology</p>
+              <p>Scored an 8.5 CGPA in my first year. 
+                Realized my passion for Artificial Intelligence and Machine Learning within Computer Science, 
+                which led me to join the college's AI Club. I am currently exploring and pursuing this passion actively.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <div id="projects" className="projects-section">
-        <h2>Projects <br />
+        <h2>Top-3 Projects <br />
           <small style={{ fontWeight: "normal", fontSize: "0.85rem", color: "grey" }}>
         (Click on any project card to visit its live demo or source code.)
       </small>
@@ -130,6 +173,29 @@ export default function Homepage() {
           </a>
         </div>
       </div>
+
+      <div className="contact-section">
+        <h2>Contact Me</h2>
+        <form
+          className="contact-form"
+          action="https://formspree.io/f/xblyzbkg"
+          method="POST"
+          encType="multipart/form-data"
+        >
+          <div className="contact-inputs">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <textarea
+            name="message"
+            placeholder="How can I help? Please include rough scope, budget, timeframe, etc."
+            rows="5"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
 
     </div>
   );
